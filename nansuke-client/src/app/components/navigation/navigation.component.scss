@@ -1,0 +1,50 @@
+$navigation-bar-height: 65px;
+
+.navigation-container{
+  height: $navigation-bar-height;
+  background-color: antiquewhite;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.navigation-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0 15px;
+}
+
+.sidebar {
+  position: absolute;
+  left: 0;
+  top: $navigation-bar-height;
+  width: 200px;
+  height: calc(100vh - $navigation-bar-height);
+}
+
+.sidebar-menu-item {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding-left: 20px;
+  font-size: 1.1em;
+  font-weight: 500;
+  border-bottom: 0.5px solid #dedede;
+
+  &:hover {
+    background-color: #dedede;
+    cursor: pointer;
+  }
+
+  a {
+    font-size: inherit;
+  }
+}
+
+.active {
+  background-color: #dedede;
+}
+
+app-sidebar {
+  width: 200px;
+}

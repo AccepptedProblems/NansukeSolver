@@ -1,0 +1,88 @@
+.nansuke-component {
+  padding: 20px;
+
+  .title {
+    font-size: 1.7em;
+    font-weight: 500;
+  }
+}
+
+.game-file-input-container {
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 7px;
+}
+
+.game-file-input-title {
+  font-size: 1.1em;
+}
+
+.input-box {
+  height: 34px;
+  line-height: 34px;
+  width: 100%;
+  border: 0.5px solid #a6a6a6;
+  border-radius: 5px;
+  margin-right: 5px;
+  padding: 0 10px;
+}
+
+.game-file-input {
+  height: 34px;
+  line-height: 34px;
+  background-color: bisque;
+  padding: 0 15px;
+  text-align: center;
+  border-radius: 5px;
+
+  span {
+    font-weight: 500;
+    font-size: 1.2em;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.puzzle-container {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.puzzle-number {
+  max-width: 20%;
+
+}
+
+.puzzle-board {
+
+}
+
+
+.puzzle-row {
+  display: flex;
+}
+
+.puzzle-cell {
+  $size: 40px;
+  width: $size;
+  height: $size;
+  line-height: $size;
+  text-align: center;
+  border: 0.5px solid black;
+}
+
+.cell-disable {
+  background-color: #000;
+}
+
+.btn {
+  height: 40px;
+  padding: 0 30px;
+}
+

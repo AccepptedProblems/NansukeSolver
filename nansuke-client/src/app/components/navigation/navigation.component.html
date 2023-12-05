@@ -1,0 +1,10 @@
+<div class="navigation-container">
+  <div class="navigation-title">Game solver</div>
+  <div class="sidebar mat-elevation-z2">
+    <div *ngFor="let menu of menus"
+         [ngClass]="(menu.isActive ? 'active':'') + ' sidebar-menu-item'"
+         (click)="onClickItem(menu)">
+      {{menu.name}}
+    </div>
+  </div>
+</div>

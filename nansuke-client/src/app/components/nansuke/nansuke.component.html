@@ -1,0 +1,42 @@
+<div class="nansuke-component">
+  <div class="title">Nansuke solver</div>
+  <div class="game-file-input-container mat-elevation-z2">
+    <div class="game-file-input-title">
+      Please upload nansuke text file here
+    </div>
+    <div style="display:flex; align-items: center; width: 100%; margin-top: 10px;">
+      <div class="input-box" (click)="fileInput.click()"> {{fileToUpload != null ? fileToUpload.name : 'Upload file here'}} </div>
+      <div class="game-file-input" (click)="extractPuzzle()">
+        <span> Upload </span>
+      </div>
+      <input #fileInput type="file" style="display: none" (change)="handleFileInput($event)">
+    </div>
+  </div>
+  <div *ngIf="puzzle != null" class="puzzle-container mat-elevation-z2">
+    <div class="puzzle-number">
+      <div style="font-weight: 600"> Number: </div>
+      <div style="display: flex;flex-wrap: wrap; width: 30%;">
+        <div *ngFor="let number of puzzle.numbers">
+          {{number + ',  '}}
+        </div>
+      </div>
+    </div>
+    <div class="puzzle-board">
+      <div class="puzzle-row" *ngFor="let i of indexes">
+        <div *ngFor="let j of indexes">
+          <div [className]="(puzzle.matrix[i][j] == 0? 'cell-disable':'') + ' puzzle-cell'">
+            <span *ngIf="solvedPuzzle != null">
+              {{solvedPuzzle.matrix[i][j]}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="puzzle-toolbar">
+      <button class="btn" (click)="solvePuzzle()"> Solve </button>
+      <div>Time: {{time}}s</div>
+      <div>Variable number: {{numVar}}</div>
+      <div>Clause number: {{numClauses}}</div>
+    </div>
+  </div>
+</div>
