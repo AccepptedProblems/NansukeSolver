@@ -14,6 +14,7 @@ export class NansukeComponent {
   numClauses: number = 0
   time: string = ""
   indexes: number[] = []
+  numbersBySize: number[][] = []
 
   constructor(private nansukeService: NansukeService) {
   }
@@ -27,10 +28,14 @@ export class NansukeComponent {
       window.alert("Please input file to upload")
       return
     }
+    this.puzzle = null
+    this.solvedPuzzle = null
     this.nansukeService.extractData(this.fileToUpload).subscribe(
       data => {
         this.puzzle = data
         this.indexes = Array(this.puzzle.boardSize).fill(1).map((x, i)=>i);
+        this.numbersBySize = this.nansukeService.particitionNumberByDigit(this.puzzle.numbers)
+        console.log(this.numbersBySize)
       }
     )
   }
@@ -45,7 +50,6 @@ export class NansukeComponent {
         this.time = data.time
         this.numVar = data.numVar
         this.numClauses = data.numClause
-        console.log(this.solvedPuzzle)
       }
     )
   }

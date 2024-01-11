@@ -14,10 +14,12 @@
   </div>
   <div *ngIf="puzzle != null" class="puzzle-container mat-elevation-z2">
     <div class="puzzle-number">
-      <div style="font-weight: 600"> Number: </div>
-      <div style="display: flex;flex-wrap: wrap; width: 30%;">
-        <div *ngFor="let number of puzzle.numbers">
-          {{number + ',  '}}
+      <div style="font-weight: 600; margin-bottom: 20px"> Number: </div>
+      <div style="">
+        <div style="display: flex;flex-wrap: wrap; margin-bottom: 10px;" *ngFor="let numbers of numbersBySize">
+          <div class="number-cell mat-elevation-z1" *ngFor="let number of numbers">
+            {{number}}
+          </div>
         </div>
       </div>
     </div>

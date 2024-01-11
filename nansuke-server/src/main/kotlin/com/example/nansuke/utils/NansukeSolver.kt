@@ -186,6 +186,10 @@ class NansukeSolver : BaseSolver() {
                 }
             }
 
+            println("Rule 2")
+            println(overlapNums)
+            println(notOverlapNums)
+
             // for not overlap
             cellsList.forEach { cells ->
                 notOverlapNums.forEach { notOverlapNum ->
